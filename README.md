@@ -42,11 +42,20 @@ The platform covers a wide range of Indian policy domains — from tax reforms a
 |---|---|
 | 📊 **Interactive Dashboard** | Overview of policy categories with key statistics and visual analytics |
 | 📚 **Policy Library** | Browse and search through a comprehensive collection of Indian policies |
-| 🤖 **PolicyAI Chatbot** | AI-powered assistant using HuggingFace's LLaMA model to answer policy-related questions |
-| 📈 **Impact Simulation** | Simulate and visualize the potential impact of policy changes |
+| 🤖 **PolicyAI Assistant** | Context-aware AI using `face-api.js` and LLMs to answer questions and assist with identity protection |
+| 🔍 **Scan My Photo** | **Identity Protection Suite**: Face matching, reverse image search, and metadata (EXIF) risk analysis |
+| 📉 **Impact Simulation** | Simulate and visualize the potential impact of policy changes |
 | ⚠️ **Risk Analysis** | Analyze risks associated with policy implementations |
 | 📝 **Reports** | Generate and view detailed policy analysis reports |
 | 🔍 **Smart Search** | Global keyword search with category-based filtering and keyboard navigation |
+
+### 🛡️ Identity Protection Suite (NEW)
+
+- 👥 **Face Match Checker** — Uses `face-api.js` with 68 facial landmarks for high-accuracy identity verification (distance < 0.35 confidence).
+- 🖼️ **Reverse Image Search** — Finds unauthorized use of your photos across the web using Google Lens / SerpAPI.
+- 💾 **Metadata (EXIF) Analysis** — Extracts GPS, camera info, and detects AI-generated content (Midjourney, DALL-E).
+- 🚩 **Privacy Risk Score** — AI-powered assessment of image risk based on location, biometric data, and context.
+- 📨 **Auto-Complaint** — Generates professional AI complaint letters for reported identity theft incidents.
 
 ### 📋 Policy Domains Covered
 
@@ -79,9 +88,13 @@ The platform covers a wide range of Indian policy domains — from tax reforms a
 - **Zustand** — State management
 - **Lucide React** — Icon library
 
-### AI / Backend
-- **HuggingFace Inference API** — Powers the PolicyAI chatbot using `meta-llama/Llama-3.1-8B-Instruct`
-- **Custom Knowledge Base** — Comprehensive Indian policy data built into the application
+### AI / Computer Vision
+- **face-api.js** — Browser-side face detection & recognition using 68 facial landmarks
+- **exifr** — High-performance image metadata (EXIF) parser
+- **HuggingFace Inference API** — Powers the PolicyAI chatbot and image context analysis
+- **LLM Models** — `meta-llama/Llama-3.1-8B-Instruct` and `zephyr-7b-beta`
+- **SerpAPI** — Provides Google Lens and Reverse Image Search data
+- **Custom Knowledge Base** — 300+ line Indian policy knowledge system
 
 ---
 
@@ -154,7 +167,9 @@ npm run preview
 
 | Variable | Description | Required |
 |---|---|---|
-| `VITE_HF_API_KEY` | HuggingFace API key for the PolicyAI chatbot | ✅ Yes |
+| `VITE_HF_API_KEY` | HuggingFace API key for chatbot and image analysis | ✅ Yes |
+| `VITE_SERPAPI_KEY` | SerpAPI key for Reverse Image Search | ✅ Yes |
+| `VITE_IMGBB_KEY` | imgBB key for temporary image host for search | ✅ Yes |
 
 > **Note:** All client-side environment variables must be prefixed with `VITE_` for Vite to expose them to the application.
 
@@ -199,7 +214,12 @@ policy-insight-hub/
 │   │   ├── AiGovernance.tsx    # AI governance framework
 │   │   ├── InsurancePolicy.tsx # Insurance regulations
 │   │   ├── DpdpRules.tsx       # DPDP Act 2023
-│   │   └── ...                 # Other policy pages
+│   │   ├── ...                 # Other policy pages
+│   │   └── scan-my-photo/      # Identity Protection Suite
+│   │       ├── FaceMatch.tsx   # Face verification tool
+│   │       ├── Scanning.tsx    # Reverse image search UI
+│   │       ├── ActionCenter.tsx# Complaint & resolution portal
+│   │       └── api.ts          # Computer vision & search APIs
 │   ├── stores/                 # Zustand state stores
 │   ├── test/                   # Test files
 │   ├── App.tsx                 # Root application component with routes
