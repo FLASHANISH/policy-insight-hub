@@ -48,6 +48,8 @@ The platform covers a wide range of Indian policy domains — from tax reforms a
 | ⚠️ **Risk Analysis** | Analyze risks associated with policy implementations |
 | 📝 **Reports** | Generate and view detailed policy analysis reports |
 | 🔍 **Smart Search** | Global keyword search with category-based filtering and keyboard navigation |
+| 🧮 **Tax Calculator** | Comprehensive AI-powered calculator for GST, Income Tax, and other duties |
+| 🚨 **Online Fraud** | Step-by-step guide for reporting to the National Cyber Crime Reporting Portal |
 
 ### 🛡️ Identity Protection Suite (NEW)
 
@@ -60,6 +62,7 @@ The platform covers a wide range of Indian policy domains — from tax reforms a
 ### 📋 Policy Domains Covered
 
 - 💰 **Tax Policy** — New income tax slabs, deductions, and financial regulations
+- 🧮 **Tax Calculator** — Interactive tools for calculating Income Tax, GST, EMI, Vehicle Tax, and more
 - 🛣️ **Road Safety Rules** — Traffic rules, penalties, and safety guidelines
 - 👮 **IPS Conduct Rules** — Indian Police Service rules and regulations
 - 🎓 **AICTE Rules** — Technical education guidelines and regulations
@@ -214,6 +217,8 @@ policy-insight-hub/
 │   │   ├── AiGovernance.tsx    # AI governance framework
 │   │   ├── InsurancePolicy.tsx # Insurance regulations
 │   │   ├── DpdpRules.tsx       # DPDP Act 2023
+│   │   ├── OnlineFraudComplaint.tsx # National Cyber Crime reporting guide
+│   │   ├── TaxCalculator/      # Comprehensive tax calculators
 │   │   ├── ...                 # Other policy pages
 │   │   └── scan-my-photo/      # Identity Protection Suite
 │   │       ├── FaceMatch.tsx   # Face verification tool
